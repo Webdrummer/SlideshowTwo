@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .container {
+            position: relative;
+            width: 700px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4;
+            width: 100%;
+            height: 100%;
+            transform: translateX(700px);
+            background-image: url(Img/slide1.jpg);
+            background-position: center;
+            background-size: cover;
+            animation: animate 16s infinite;
+        }
+
+        .slide.two {
+            z-index: 3;
+            background-image: url(Img/slide2.jpg);
+            animation-delay: 4s;
+        }
+
+        .slide.three {
+            z-index: 2;
+            background-image: url(Img/slide3.jpg);
+            animation-delay: 8s;
+        }
+
+        .slide.four {
+            z-index: 1;
+            background-image: url(Img/slide4.jpg);
+            animation-delay: 12s;
+        }
+
+        .slide.five {
+            background-image: url(Img/slide5.jpg);
+            animation-delay: 16s;
+        }
+
+        @keyframes animate {
+            3% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(0);
+            }
+            28% {
+                transform: translateX(-700px);
+            }
+            100% {
+                transform: translateX(-700px);
+            }
+        }
+    
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="slide"></div>
+        <div class="slide two"></div>
+        <div class="slide three"></div>
+        <div class="slide four"></div>
+        <div class="slide five"></div>
+    </div>
+</body>
+</html>
